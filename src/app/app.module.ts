@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { CitasComponent } from './pages/citas/citas.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UsersComponent } from './pages/users/users.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { UsersComponent } from './pages/users/users.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
