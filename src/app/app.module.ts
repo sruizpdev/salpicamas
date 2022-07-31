@@ -8,6 +8,8 @@ import { CitasComponent } from './pages/citas/citas.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UsersComponent } from './pages/users/users.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ChatModule } from './chat/chat.module';
+import { LoginModule } from './login/login.module'; 
 
 @NgModule({
   declarations: [
@@ -15,14 +17,17 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     HomeComponent,
     CitasComponent,
-    UsersComponent
+    UsersComponent,
+    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChatModule,
+    LoginModule, 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

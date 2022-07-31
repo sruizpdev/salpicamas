@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="card text-center">
+    <div class="card-header">Login</div>
+    <div class="card-body">
+      <label for="email">Email</label
+      ><input
+        type="email"
+        class="form-control"
+        placeholder="Ingrese su email"
+        [(ngModel)]="usuario.email"
+      />
+      <label for="passwords">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Ingrese su password"
+        [(ngModel)]="usuario.password"
+      />
+      <button class="btn btn-primary m-3" (click)="ingresar()">Ingresar</button>
+      <label>Aún no tienes cuenta <a href="#">Registrarse</a></label>
+    </div>
+  </div>
+</div>
