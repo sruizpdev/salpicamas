@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -11,10 +12,28 @@ export class AuthComponent implements OnInit {
     password: '',
   };
 
-  ingresar() {
-    console.log(this.usuario);
-  }
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
+  userLogged = this.authService.getUserLogged();
+  ingresar() {
+    const { email, password } = this.usuario;
+    this.authService.register(email, password).then((resp) => {
+      console.log('Se registro: ', resp);
+    });
+  }
+  ingresarGoogle() {
+    const { email, password } = this.usuario;
+    this.authService.loginWithGoogle(email, password).then((resp) => {
+      console.log('Se registro: ', resp);
+    });
+  }
+  obtenerUsuarioLogado() {
+    this.authService.getUserLogged().subscribe((resp) => {
+      console.log(resp);
+    });
+  }
+  logout() {
+    this.authService.logout();
+  }
   ngOnInit(): void {}
 }

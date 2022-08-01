@@ -1,4 +1,7 @@
 <div class="container">
+  <label>Usuario: </label>
+  <label *ngIf="userLogged | async as user">{{ user.email }}</label>
+
   <div class="card text-center">
     <div class="card-header">Login</div>
     <div class="card-body">
@@ -17,7 +20,16 @@
         [(ngModel)]="usuario.password"
       />
       <button class="btn btn-primary m-3" (click)="ingresar()">Ingresar</button>
+      <button class="btn btn-primary m-3" (click)="ingresarGoogle()">
+        Ingresar con google
+      </button>
       <label>Aún no tienes cuenta <a href="#">Registrarse</a></label>
+    </div>
+
+    <div class="">
+      <button class="btn btn-info m-2" (click)="obtenerUsuarioLogado()">
+        Usuario logado</button
+      ><button class="btn btn-info m-2" (click)="logout()">Logout</button>
     </div>
   </div>
 </div>
