@@ -36,6 +36,7 @@ export class AuthService {
     }
   }
   getUserLogged() {
+    
     return this.afauth.authState;
   }
   logout() {
